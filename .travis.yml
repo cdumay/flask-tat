@@ -10,3 +10,12 @@ python:
 script:
 - python setup.py sdist
 - python setup.py bdist_wheel
+deploy:
+  provider: pypi
+  user: cdumay
+  password:
+    secure: Dzdhbk7hM0T7PDYJh/+lr5SiQnmlRUjQwOn3ZSo2tPJgxOlRxyWHTI1yiicBRQkC/GPCZh1go32QuCxsf8RhYU61bag5cOwS3vEQrVPWXxbHHp9mqTHj5sTG9q5nI8NRlr++nGrofRFlx5h6DPVHoa/p5ZVMnjPAGPwlFFYMPmXNCqzqtcHXTGfKUY6n1d94x6lvPM3oxgR8f9lyti+BgtDVExyvsvPPl49u20syjo9C04d6hEyyvKi0GMfjnL99r3mfciwbf9lWo/nZD1rXeX5Y24UsN/UNSNjJyrmw+CVa7J0d1BUWuu3RdqvnfLAkhjP6X4M5qYOy8/WcuqAiBA8h72UD1uSMscy9uF6kY0q8OHuwa+eCDgE2bY81GB+b29xr5u3QM4poTv4s9VSDk2GF+4vbpB6jO7Dna2blMiTlTAsgQDYlj22qtJaEH1dlNtCVTMknZ1oRmMIDL8aWrWC2OhYE3Je0LCXFJusy72/NEIEYzkUY2esc6mzMknYP9ecvxDUhTLhgTlcOHHNvNW66pXFWvWk1x5QrLwKFPtoEmsc1bZn+IzzBv3UdvJSO/tOSxLQ08L3dJxo/WIi6WSA1L5VGY2K7ttEYtztCyuC6xMKgYoMRu+yMCJ+dSCVUnJo3keSeWOoJ9tVu5LDm+gGFyk37ufufRRFONYj/39w=
+  on:
+    tags: true
+    distributions: sdist bdist_wheel
+    repo: cdumay/flask-tat
