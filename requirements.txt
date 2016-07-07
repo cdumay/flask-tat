@@ -1,3 +1,2 @@
 flask
-requests[security]
-marshmallow
+cdumay-rest-client

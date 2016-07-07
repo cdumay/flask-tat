@@ -8,8 +8,9 @@
 """
 from flask import current_app as app
 from flask.blueprints import Blueprint
-from flask_tat.http_client import HTTPClient
-from flask_tat.exceptions import ValidationError
+
+from cdumay_rest_client.client import RESTClient
+from cdumay_rest_client.exceptions import ValidationError
 
 CASCADE = ("nocascade", "cascade", "cascadeforce")
 
@@ -43,7 +44,7 @@ class TATClient(object):
     @property
     def client(self):
         if self._client is None:
-            self._client = HTTPClient(
+            self._client = RESTClient(
                 server=app.config['TAT_URL'],
                 headers={
                     "Tat_username": app.config["TAT_USERNAME"],
