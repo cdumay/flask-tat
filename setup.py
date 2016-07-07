@@ -5,8 +5,7 @@
 .. codeauthor:: Cédric Dumay <cedric.dumay@gmail.com>
 
 """
-
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='flask-tat',
@@ -23,4 +22,6 @@ setup(
     include_package_data=True,
     zip_safe=True,
     install_requires=open('requirements.txt', 'r').readlines(),
+    packages=find_packages('src'),
+    package_dir={'': 'src'},
 )
