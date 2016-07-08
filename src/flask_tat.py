@@ -6,7 +6,6 @@
 
 
 """
-from flask import current_app as app
 from flask.blueprints import Blueprint
 
 from cdumay_rest_client.client import RESTClient
@@ -46,10 +45,10 @@ class TATClient(object):
     def client(self):
         if self._client is None:
             self._client = RESTClient(
-                server=app.config['TAT_URL'],
+                server=self.app.config['TAT_URL'],
                 headers={
-                    "Tat_username": app.config["TAT_USERNAME"],
-                    "Tat_password": app.config["TAT_PASSWORD"],
+                    "Tat_username": self.app.config["TAT_USERNAME"],
+                    "Tat_password": self.app.config["TAT_PASSWORD"],
                     "Content-type": "application/json",
                 }
             )
