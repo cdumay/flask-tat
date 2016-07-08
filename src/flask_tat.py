@@ -35,7 +35,8 @@ class TATClient(object):
     def _deferred_blueprint_init(self, setup_state):
         self._init_app(setup_state.app)
 
-    def _init_app(self, app):
+    @staticmethod
+    def _init_app(app):
         """"""
         app.config.setdefault('TAT_URL', 'http://127.0.0.1')
         app.config.setdefault('TAT_USERNAME', 'test')
