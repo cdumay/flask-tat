@@ -11,7 +11,7 @@ setup(
     name='flask-tat',
     version=open('VERSION', 'r').read().strip(),
     description="Flask TAT client",
-    long_description=open('README.md', 'r').read().strip(),
+    long_description=open('README.rst', 'r').read().strip(),
     classifiers=["Programming Language :: Python"],
     keywords='',
     author='Cedric DUMAY',
