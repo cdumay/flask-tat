@@ -22,7 +22,6 @@ class TATClient(object):
         self._client = None
 
         if app is not None:
-            self.app = app
             self.init_app(app)
 
     def init_app(self, app):
@@ -34,12 +33,12 @@ class TATClient(object):
     def _deferred_blueprint_init(self, setup_state):
         self._init_app(setup_state.app)
 
-    @staticmethod
-    def _init_app(app):
+    def _init_app(self, app):
         """"""
         app.config.setdefault('TAT_URL', 'http://127.0.0.1')
         app.config.setdefault('TAT_USERNAME', 'test')
         app.config.setdefault('TAT_PASSWORD', 'test')
+        self.app = app
 
     @property
     def client(self):
