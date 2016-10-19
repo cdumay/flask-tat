@@ -9,7 +9,7 @@
 
 import os
 from flask import Flask
-from flask_tat import TATClient
+from flask_tat.engine import TATClient
 
 os.environ.setdefault('TAT_URL', 'http://127.0.0.1')
 os.environ.setdefault('TAT_USERNAME', 'test')
