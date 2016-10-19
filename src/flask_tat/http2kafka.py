@@ -23,7 +23,7 @@ class HTTP2KafkaClient(BaseTATClient):
 
     def message_relabel(self, topic, tag_ref, labels):
         return self.client.do_request(
-            method="POST", path="/message/{}".format(topic.lstrip('/')),
+            method="PUT", path="/message/{}".format(topic.lstrip('/')),
             data={
                 "labels": labels, "tagReference": tag_ref, "action": "relabel"
             }
