@@ -10,6 +10,11 @@ from flask_tat.base import BaseTATClient
 
 
 class HTTP2KafkaClient(BaseTATClient):
+    def message_add(self, topic, **kwargs):
+        return self.client.do_request(
+            method="POST", path="/message/%s" % topic.lstrip('/'), data=kwargs
+        )
+
     def message_reply(self, topic, tag_ref, text):
         return self.client.do_request(
             method="POST", path="/message/{}".format(topic.lstrip('/')),
