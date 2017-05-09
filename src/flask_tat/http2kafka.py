@@ -39,6 +39,7 @@ class HTTP2KafkaClient(BaseTATClient):
                     "X-Tat_username": self.app.config["TAT_USERNAME"],
                     "X-Tat_password": self.app.config["TAT_PASSWORD"],
                     "Content-type": "application/json",
-                }
+                },
+                ssl_verify=self.app.config["TAT_SSL_VERIFY"],
             )
         return self._client
