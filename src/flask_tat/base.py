@@ -34,6 +34,7 @@ class BaseTATClient(object):
         app.config.setdefault('TAT_URL', 'http://127.0.0.1')
         app.config.setdefault('TAT_USERNAME', 'test')
         app.config.setdefault('TAT_PASSWORD', 'test')
+        app.config.setdefault("TAT_SSL_VERIFY", True)
         self.app = app
 
     @property
@@ -45,7 +46,8 @@ class BaseTATClient(object):
                     "Tat_username": self.app.config["TAT_USERNAME"],
                     "Tat_password": self.app.config["TAT_PASSWORD"],
                     "Content-type": "application/json",
-                }
+                },
+                ssl_verify=self.app.config["TAT_SSL_VERIFY"],
             )
 
         return self._client

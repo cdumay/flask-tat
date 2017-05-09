@@ -29,6 +29,7 @@ Next, add a :code:`TATClient` instance to your code:
         TAT_URL="http://the.tat.server",
         TAT_USERNAME="username",
         TAT_PASSWORD="password,
+        TAT_SSL_VERIFY=False
     ))
 
     tat_client = TATClient(app)
